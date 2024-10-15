@@ -16,7 +16,6 @@ const Login = () => {
                 .min(6, 'Password must be at least 6 characters long'),
         }),
         onSubmit: (values) => {
-            // Handle login logic here
             console.log('Login values:', values);
         },
     });
@@ -33,11 +32,11 @@ const Login = () => {
                         <input
                             type="text"
                             id="username"
-                            name="username" // Set the name to match initialValues
+                            name="username"
                             className={`w-full p-2 border rounded ${formik.touched.username && formik.errors.username ? 'border-red-500' : 'border-gray-300'}`}
-                            onChange={formik.handleChange} // Update Formik state
-                            onBlur={formik.handleBlur} // Mark field as touched
-                            value={formik.values.username} // Bind input value to Formik state
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            value={formik.values.username} 
                         />
                         {formik.touched.username && formik.errors.username ? (
                             <div className="text-red-500 text-sm">{formik.errors.username}</div>
@@ -50,11 +49,11 @@ const Login = () => {
                         <input
                             type="password"
                             id="password"
-                            name="password" // Set the name to match initialValues
+                            name="password"
                             className={`w-full p-2 border rounded ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'}`}
-                            onChange={formik.handleChange} // Update Formik state
-                            onBlur={formik.handleBlur} // Mark field as touched
-                            value={formik.values.password} // Bind input value to Formik state
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.password}
                         />
                         {formik.touched.password && formik.errors.password ? (
                             <div className="text-red-500 text-sm">{formik.errors.password}</div>
